@@ -1,0 +1,36 @@
+#!/bin/bash
+archivo=/tmp/lista.txt
+
+find `pwd` -type f -mtime -8 |awk -FCoordinación ' { print "."$2 } '|  grep -v "#$"|grep -v "~$"|grep -v "\.$"|sort | uniq > /tmp/lista.txt
+sed -i 's/ /\\ /g' /tmp/lista.txt
+#mkdir /tmp/cosa/
+
+
+n=$(nl /tmp/lista.txt|tail -n 1|awk ' { print $1 } ')
+echo "$n"
+
+sed '3d' $archivo| xargs -l1 echo
+
+
+#Selecciona línea por línea
+#cat /tmp/lista.txt| xargs -l1 echo
+
+ 
+
+
+#for i in $(cat /tmp/lista.txt); do
+#cp -vur $i /tmp/cosa/
+#done
+#cat /tmp/lista.txt | xargs -l1 cp -vur /tmp/cosa/
+
+
+#Lista los archivos modificacados recientemente:
+#find `pwd` -type f -mtime -8 |awk -FCoordinación ' { print "."$2 } '|  grep -v "#$"|grep -v "~$"> /tmp/lista.txt
+
+#ls -lcR |grep $(date +%Y-%m-%d)|grep -v ^d |  awk ' { print $8 " " $9 " " $10 " "  $11 " " $12 " " $13 " " $14 " " $15 " " $16 " "} '> /tmp/last.txt
+#find . -type f -mtime -8 > /tmp/lista
+
+
+#Copia sin considerar la carpeta de dónde proviene. Archivo absoluto
+#find `pwd` -type f -mtime -8 -exec cp -vur {} /tmp/cosa/ \;
+
