@@ -1,0 +1,9 @@
+#
+# Repositorios de Canaima GNU/Linux 2.0
+#
+
+# Repositorios en línea
+deb http://repositorio.canaima.softwarelibre.gob.ve/ estable usuarios
+deb http://repositorio.canaima.softwarelibre.gob.ve/ pruebas usuarios
+#deb http://universo.canaima.softwarelibre.gob.ve/ lenny main contrib non-free
+deb http://seguridad.canaima.softwarelibre.gob.ve/ seguridad usuarios
